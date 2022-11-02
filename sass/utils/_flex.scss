@@ -1,0 +1,10 @@
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width:$mobile-breakpoint) {
+        display: block;
+    }
+
+}
