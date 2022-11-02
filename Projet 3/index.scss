@@ -1,0 +1,197 @@
+@import "./sass/main";
+
+// sass  -w index.scss:index.css 
+
+
+/*     HEADER    */
+
+#logo {
+    @include logo;
+}
+
+/*      MAIN     */
+
+/*  City  */
+#city {
+    .localisation {
+        display: flex;
+        gap: 8px;
+        background-color: $colour-background;
+        text-align: $text-center;
+        padding: 1px;
+        font-weight: bolder;
+        font-size: 14px;
+    }
+
+    .material-symbols-rounded {
+        font-size: 17px;
+    }
+}
+
+/*  Explorer  */
+#explorer {
+    text-align: $text-center;
+    background-color: $colour-background-secondary;
+    padding: 20px 0 60px 0;
+
+    @media (max-width:$mobile-breakpoint) {
+        margin: 5px;
+
+        h2 {
+            margin: 10px 30px;
+        }
+    }
+}
+
+button {
+    @include button;
+}
+
+/*  Fonctionnement  */
+#fonctionnement {
+    counter-reset: steps;
+
+    h1 {
+        text-align: $text-center;
+        padding-bottom: 10px;
+        padding-top: 20px;
+
+        @media (max-width:$mobile-breakpoint) {
+            text-align: start;
+            padding-left: 25px;
+        }
+    }
+
+    ol {
+        display: flex;
+        gap: 35px;
+        margin: 25px 25px;
+        padding-bottom: 40px;
+        padding-left: 0;
+
+        @media (max-width:$tab-breakpoint) {
+            flex-direction: column;
+        }
+
+        :hover {
+            background-color: #DDD3FF;
+        }
+    }
+
+    li {
+        position: relative;
+
+        &::before {
+            content: counter(steps);
+            counter-increment: steps;
+            color: $colour-white;
+            background-color: $colour-primary;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            @include flex;
+            position: absolute;
+            bottom: 1.7rem;
+            left: -1rem;
+        }
+
+        background-color: $colour-background-secondary ;
+        padding: 30px 30px;
+        flex-grow: 2;
+        border-radius: 20px;
+        @include box-shadow;
+        list-style-type: none;
+        font-weight: bold;
+    }
+
+    .fa-solid {
+        margin-right: 18px;
+        color: grey;
+    }
+}
+
+/*  Menu  */
+.menu {
+    background-color: $colour-background;
+
+    h2 {
+        text-align: $text-center;
+        padding-top: 40px;
+        margin-bottom: 1px;
+
+        @media (max-width:$mobile-breakpoint) {
+            text-align: start;
+            padding-left: 25px;
+        }
+
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 20px;
+        padding-bottom: 50px;
+
+        @media (max-width:$mobile-breakpoint) {
+            grid-template-columns: none;
+        }
+
+        @media (min-width:$mobile-breakpoint) and (max-width:$tab-breakpoint) {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+
+        .new {
+            position: relative;
+        }
+
+        .new::before {
+            content: "Nouveau";
+            position: absolute;
+            height: 30px;
+            width: 90px;
+            background-color: $colour-tertiary;
+            color: darken($color: $colour-tertiary, $amount: 50%);
+            display: grid;
+            place-items: center;
+            right: 15px;
+            top: 15px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    }
+
+    .card {
+        flex-grow: 1;
+        min-width: 40%;
+        background-color: $colour-white;
+        border-radius: 15px;
+        box-shadow: 1px 1px 8px -3px #000000;
+
+        &__description {
+            position: relative;
+
+            h3 {
+                margin: 12px 12px 5px 12px;
+                font-size: medium;
+            }
+
+            p {
+                margin: 1px 0 15px 12px;
+            }
+
+            i {
+                font-size: 30px;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @include images
+    }
+}
+
+/*  FOOTER  */

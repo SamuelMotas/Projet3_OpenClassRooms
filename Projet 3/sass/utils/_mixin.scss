@@ -1,0 +1,92 @@
+@mixin logo {
+    text-align: $text-center;
+    margin-top: 0;
+    padding-bottom: 10px;
+    box-shadow: $heading-shadow-size lightgray;
+    padding: 8px;
+    margin-bottom: 0;
+    position: relative;
+
+    img {
+        height: 29px;
+    }
+}
+
+
+@mixin button {
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 25px;
+    color: $colour-white;
+    background-image: linear-gradient(to top, $colour-primary, $colour-secondary);
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 2px 1px 8px -3px #000000;
+    margin-top: 15px;
+    transition-duration: .25s;
+    
+
+    &:hover {
+        background-color: hsl(0deg 0% 100%);
+    box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
+    }
+}
+
+@mixin box-shadow {
+    box-shadow: 1px 1px 8px -3px #000000;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin images {
+
+    &__image {
+        height: 200px;
+        background-size: cover;
+        border-radius: 15px 15px 0 0;
+        background-position: bottom;
+
+        @media (max-width:$mobile-breakpoint) {
+            height: 170px;
+        }
+    }
+
+    &__image-1 {
+        background-image: url(images/restaurants/menu-1.jpg);
+    }
+
+    &__image-2 {
+        background-image: url(images/restaurants/menu-2.jpg);
+        background-position: center;
+    }
+
+
+    &__image-3 {
+        background-image: url(images/restaurants/menu-3.jpg);
+    }
+
+    &__image-4 {
+        background-image: url(images/restaurants/menu-4.jpg);
+    }
+}
+
+@mixin heart {
+    & {
+        position: relative;
+
+        i {
+            font-size: 30px;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+    }
+}
